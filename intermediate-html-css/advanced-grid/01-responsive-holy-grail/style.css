@@ -5,6 +5,15 @@ html {
 }
 
 .container {
+  --column-size: 1fr;
+  --row-size: 1fr;
+
+  display: grid;
+  gap: 15px;
+
+  grid-template-columns: var(--column-size) calc(var(--column-size) * 3);
+  grid-template-rows: repeat(2, var(--row-size)) calc(var(--row-size * 5)) var(--row-size);
+
   text-align: center;
   height: 100%;
   padding: 16px;
