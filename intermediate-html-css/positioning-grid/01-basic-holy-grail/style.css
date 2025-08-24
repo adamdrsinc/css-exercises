@@ -5,6 +5,15 @@ html {
 }
 
 .container {
+  --first-col: 275px;
+  --row-size: 125px;
+
+  display: grid;
+  gap: 15px;
+
+  grid-template-columns: var(--first-col) calc(var(--first-col) * 3);
+  grid-template-rows: repeat(2, var(--row-size)) calc(var(--row-size) * 5) var(--row-size);
+
   text-align: center;
   height: 100%;
   padding: 16px;
@@ -22,14 +31,19 @@ html {
 
 .header {
   background-color: #006157;
+
+  grid-column: 1 / 3;
 }
 
 .sidebar {
   background-color: #005B94;
+
+  grid-row: 2 / 4;
 }
 
 .nav {
   background-color: #642cde;
+
 }
 
 .article {
@@ -38,6 +52,8 @@ html {
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1/3;
+
 }
 
 .article p {
